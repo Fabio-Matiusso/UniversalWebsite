@@ -1,5 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
+
 
 const NavStyled = styled.nav`
     list-style: none;
@@ -36,7 +38,7 @@ const Nav = (props) => {
                                 <LiStyled links = {links}>
                                     {links.map(link => (
                                         <div style = {{marginLeft: 20, marginRight: 20}}>
-                                            <li>{link}</li>
+                                            <li><Link to = {link.path} >{link.label}</Link></li>
                                         </div>
                                     ))}
                                 </LiStyled>

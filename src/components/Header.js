@@ -4,10 +4,6 @@ import Nav from "./Nav"
 import LogoHeader from '../images/shared/logo.svg'
 
 const HeaderStyled = styled.header`
-/*
-padding-left: 5%;
-padding-right: 5%; */
-/* width: 90%; */
 height: 96px;
 color: #fff;
 display: flex;
