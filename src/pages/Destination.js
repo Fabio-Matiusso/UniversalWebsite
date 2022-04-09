@@ -1,6 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
 import DestinationStructure from "../components/DestinationStructure";
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Moon from "../components/planets_destination/Moon";
+import Mars from "../components/planets_destination/Mars";
+import Titan from "../components/planets_destination/Titan";
+import Europa from "../components/planets_destination/Europa";
+
 const links = [
     {
         label: '00 Home',
@@ -23,6 +29,7 @@ const links = [
 export default function Destination() {
     return (
         <>
+
             <DestinationStructure />
         </>
     )

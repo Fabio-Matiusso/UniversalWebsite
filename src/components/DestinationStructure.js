@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components'
 import ImageMoon from '../images/destination/image-moon.png'
 import BackgroundImagePlanets from '../images/destination/background-destination-desktop.jpg'
 import Header from "./Header";
 import Slide from 'react-reveal/Slide';
+import Moon from "./planets_destination/Moon";
+import Europa from "./planets_destination/Europa";
+import Mars from "./planets_destination/Mars";
+import Titan from "./planets_destination/Titan";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+
+
 
 const links = [
     {
@@ -25,60 +32,6 @@ const links = [
 
 ]
 
-const BackgroundImagePlanetsComponent = styled.body`
-    width: 100vw;
-    height: 100vh;
-    background-image: url(${BackgroundImagePlanets});
-
-`
-
-const Box = styled.div`
-    max-width: 80%;
-    max-height: 576px;
-    display: flex;
-    margin: 0 auto;
-`
-
-const Title = styled.h1`
-    height: 34px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    display: flex;
-    margin: 0 auto;
-    max-width: 1047px;
-    align-self: flex-start;
-`
-
-const TitlePlanet = styled.h1`
-    font-size: 100px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-`
-
-const PlanetSubtitle = styled.p`
-    color: #fff;
-    font-size: 18px;
-    line-height: 32px;
-`
-
-const PlanetAndDesc = styled.div`
-    width: 90%;
-    height: 500px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-`
-
-const DescPlanet = styled.div`
-    width: 445px;
-    height: 472px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-`
-
 const PlanetOption = styled.ul`
     display: flex;
     color: #fff;
@@ -90,72 +43,86 @@ const LiPlanetValue = styled.li`
     align-self: flex-end;
 `
 
-const Distances = styled.div`
-    display: flex;
-    justify-content: flex-start;
-`
 
-const DistanceTitle = styled.p`
-    font-size: 14px;
-    letter-spacing: 2.36px;
-    padding: 10px;
-    color: #fff;
-`
+const DestinationStructure = (props) => {
 
-const DistanceNumber = styled.p`
-    font-size: 28px;
-    padding: 10px;
-    color: #fff;
-`
+    const [showContent, setShowContent] = useState(false)
+
+    const changeToMoon = () => {
+
+        console.log("Mudou para lua")
+
+        setShowContent(!showContent)
+
+        if(showContent){
+            return(
+                <Moon />
+            )
+        } else{
+            return null
+        }
+
+    }
+
+    const changeToMars = () => {
+
+        setShowContent(!showContent)
+
+        console.log("Mudou para Mars")
+
+        console.log(showContent)
+
+        if(showContent){
+            return(
+                <Mars />
+            )
+        } else{
+            return null
+        }
+    }
+
+    const changeToEuropa = () => {
+
+        setShowContent(!showContent)
+
+        console.log("Mudou para Europa")
+
+        if(showContent){
+            return(
+                <Europa />
+            )
+        } else{
+            return null
+        }
 
 
-const DestinationStructure = () => {
+    }
+
+    const changeToTitan = () => {
+
+        setShowContent(!showContent)
+
+        console.log("Mudou para Titan")
+
+        if(showContent){
+            return(
+                <Titan />
+            )
+        } else{
+            return null
+        }
+
+    }
     
-    return(
-        
-        <BackgroundImagePlanetsComponent>
-            <Header links={links}/>
-            <div style={{maxWidth: "100%"}}>
-            <Slide left>
-            <Title>01 pick your destination</Title>
-                <Box>
-                    <PlanetAndDesc>
-                        <div style={{margin: "0px 20px"}}>
-                            <img  src = {ImageMoon} style = {{width: 400, height: 400, display: "flex", alignItems: "center"}}/>   
-                        </div>
 
-                        <DescPlanet style={{margin: "0px 0px 0px 100px"}}>
-                            <PlanetOption>
-                                <LiPlanetValue>MOON</LiPlanetValue>
-                                <LiPlanetValue>MARS</LiPlanetValue>
-                                <LiPlanetValue>EUROPA</LiPlanetValue>
-                                <LiPlanetValue>TITAN</LiPlanetValue>
-                            </PlanetOption>
-                            <TitlePlanet>moon</TitlePlanet>
-                            <PlanetSubtitle>
-                            See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
-                            </PlanetSubtitle>
-                            <hr />
-                            <Distances>
-                                <div>
-                                    <DistanceTitle>AVG DISTANCE</DistanceTitle>
-                                    <DistanceNumber>384,400 KM</DistanceNumber>
-                                </div>
 
-                                <div>
-                                    <DistanceTitle>EST. TRAVEL TIME</DistanceTitle>
-                                    <DistanceNumber>3 DAYS</DistanceNumber>
-                                </div>
-                            </Distances>
-                        </DescPlanet>
 
-                    </PlanetAndDesc>
-                </Box>
-                
-            </Slide>
-        </div>
-        </BackgroundImagePlanetsComponent>
-    )
-}
+        return(
+            <>
 
-export default DestinationStructure
+            <Moon/>
+            </>
+        )
+    }
+
+export default DestinationStructure;
