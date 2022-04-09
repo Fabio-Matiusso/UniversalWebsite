@@ -45,83 +45,10 @@ const LiPlanetValue = styled.li`
 
 
 const DestinationStructure = (props) => {
-
-    const [showContent, setShowContent] = useState(false)
-
-    const changeToMoon = () => {
-
-        console.log("Mudou para lua")
-
-        setShowContent(!showContent)
-
-        if(showContent){
-            return(
-                <Moon />
-            )
-        } else{
-            return null
-        }
-
-    }
-
-    const changeToMars = () => {
-
-        setShowContent(!showContent)
-
-        console.log("Mudou para Mars")
-
-        console.log(showContent)
-
-        if(showContent){
-            return(
-                <Mars />
-            )
-        } else{
-            return null
-        }
-    }
-
-    const changeToEuropa = () => {
-
-        setShowContent(!showContent)
-
-        console.log("Mudou para Europa")
-
-        if(showContent){
-            return(
-                <Europa />
-            )
-        } else{
-            return null
-        }
-
-
-    }
-
-    const changeToTitan = () => {
-
-        setShowContent(!showContent)
-
-        console.log("Mudou para Titan")
-
-        if(showContent){
-            return(
-                <Titan />
-            )
-        } else{
-            return null
-        }
-
-    }
     
 
-
-
         return(
-            <>
-
             <Moon/>
-            </>
         )
     }
 
