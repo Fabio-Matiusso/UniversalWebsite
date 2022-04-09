@@ -5,9 +5,7 @@ import BackgroundImagePlanets from '../../images/destination/background-destinat
 import Header from "../Header";
 import Slide from 'react-reveal/Slide';
 import { Link } from "react-router-dom";
-import Moon from "./Moon";
-import Europa from "./Europa";
-import Titan from "./Titan";
+
 
 const links = [
     {
@@ -29,21 +27,21 @@ const links = [
 
 ]
 
-export const BackgroundImagePlanetsComponent = styled.body`
+const BackgroundImagePlanetsComponent = styled.body`
     width: 100vw;
     height: 100vh;
     background-image: url(${BackgroundImagePlanets});
 
 `
 
-export const Box = styled.div`
+const Box = styled.div`
     max-width: 80%;
     max-height: 576px;
     display: flex;
     margin: 0 auto;
 `
 
-export const Title = styled.h1`
+const Title = styled.h1`
     height: 34px;
     color: #fff;
     text-transform: uppercase;
@@ -54,20 +52,20 @@ export const Title = styled.h1`
     align-self: flex-start;
 `
 
-export const TitlePlanet = styled.h1`
+const TitlePlanet = styled.h1`
     font-size: 100px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 400;
 `
 
-export const PlanetSubtitle = styled.p`
+const PlanetSubtitle = styled.p`
     color: #fff;
     font-size: 18px;
     line-height: 32px;
 `
 
-export const PlanetAndDesc = styled.div`
+const PlanetAndDesc = styled.div`
     width: 90%;
     height: 500px;
     display: flex;
@@ -75,7 +73,7 @@ export const PlanetAndDesc = styled.div`
     align-items: center;
 `
 
-export const DescPlanet = styled.div`
+const DescPlanet = styled.div`
     width: 445px;
     height: 472px;
     display: flex;
@@ -83,12 +81,12 @@ export const DescPlanet = styled.div`
     justify-content: space-around;
 `
 
-export const PlanetOption = styled.ul`
+const PlanetOption = styled.ul`
     display: flex;
     color: #fff;
 `
 
-export const LiPlanetValue = styled(Link)`
+const LiPlanetValue = styled(Link)`
     list-style: none;
     padding: 5px;
     align-self: flex-end;
@@ -96,28 +94,27 @@ export const LiPlanetValue = styled(Link)`
     color: #fff;
 `
 
-export const Distances = styled.div`
+const Distances = styled.div`
     display: flex;
     justify-content: flex-start;
 `
 
-export const DistanceTitle = styled.p`
+const DistanceTitle = styled.p`
     font-size: 14px;
     letter-spacing: 2.36px;
     padding: 10px;
     color: #fff;
 `
 
-export const DistanceNumber = styled.p`
+const DistanceNumber = styled.p`
     font-size: 28px;
     padding: 10px;
     color: #fff;
 `
 
 
-const Mars = (props) => {
+const Mars = () => {
 
-    const [showResults, setShowResults] = useState(false)
 
 
     const changeToMoon = () => {

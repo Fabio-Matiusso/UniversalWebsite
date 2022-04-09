@@ -5,9 +5,6 @@ import BackgroundImagePlanets from '../../images/destination/background-destinat
 import Header from "../Header";
 import Slide from 'react-reveal/Slide';
 import { Link } from "react-router-dom";
-import Moon from "./Moon";
-import Mars from "./Mars";
-import Titan from "./Titan";
 
 const links = [
     {
@@ -88,7 +85,7 @@ const PlanetOption = styled.ul`
     color: #fff;
 `
 
-export const LiPlanetValue = styled(Link)`
+const LiPlanetValue = styled(Link)`
     list-style: none;
     padding: 5px;
     align-self: flex-end;
@@ -114,9 +111,7 @@ const DistanceNumber = styled.p`
 `
 
 
-const Europa = (props) => {
-
-    const [showResultsEuropa, setShowResultsEuropa] = useState(false)
+const Europa = () => {
 
 
     const changeToMoon = () => {
@@ -136,8 +131,6 @@ const Europa = (props) => {
     }
 
     const changeToEuropa = () => {
-
-        setShowResultsEuropa(!showResultsEuropa)
 
         console.log("Mudou para Europa")
 

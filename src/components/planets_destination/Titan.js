@@ -85,7 +85,7 @@ const PlanetOption = styled.ul`
     color: #fff;
 `
 
-export const LiPlanetValue = styled(Link)`
+const LiPlanetValue = styled(Link)`
     list-style: none;
     padding: 5px;
     align-self: flex-end;
@@ -113,10 +113,6 @@ const DistanceNumber = styled.p`
 
 
 export const Titan = (props) => {
-
-    const [showResults, setShowResults] = useState(false)
-
-    const onClick = () => setShowResults(true)
 
     const changeToMoon = () => {
 

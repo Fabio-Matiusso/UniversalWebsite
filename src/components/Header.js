@@ -5,7 +5,6 @@ import LogoHeader from '../images/shared/logo.svg'
 
 const HeaderStyled = styled.header`
 height: 96px;
-color: #fff;
 display: flex;
 justify-content: space-between;
 align-items: center;

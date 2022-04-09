@@ -4,11 +4,6 @@ import ImageMoon from '../../images/destination/image-moon.png'
 import BackgroundImagePlanets from '../../images/destination/background-destination-desktop.jpg'
 import Header from "../Header";
 import Slide from 'react-reveal/Slide';
-import Europa from "./Europa";
-import Mars from "./Mars";
-import Titan from "./Titan";
-import { BrowserRouter as Router, Swtich, Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 
@@ -91,7 +86,7 @@ const PlanetOption = styled.ul`
     color: #fff;
 `
 
-export const LiPlanetValue = styled(Link)`
+const LiPlanetValue = styled(Link)`
     list-style: none;
     padding: 5px;
     align-self: flex-end;
@@ -118,14 +113,11 @@ const DistanceNumber = styled.p`
 `
 
 
-const Moon = (props) => {
-    
-    const [showResults, setShowResults] = useState(false)
+const Moon = () => {
+
 
 
     const changeToMoon = () => {
-
-        setShowResults(!showResults)
 
         console.log("Mudou para lua")
 
