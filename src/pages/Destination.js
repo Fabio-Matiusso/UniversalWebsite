@@ -7,7 +7,7 @@ import Mars from "../components/planets_destination/Mars";
 import Titan from "../components/planets_destination/Titan";
 import Europa from "../components/planets_destination/Europa";
 
-const links = [
+export const links = [
     {
         label: '00 Home',
         path: '/',

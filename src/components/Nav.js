@@ -1,56 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
-
+import RightNav from "./RightNav";
+import Burger from './Burger'
+import NavLogo from '../images/shared/logo.svg'
 
 const NavStyled = styled.nav`
+    padding: 0 20px;
+    display: flex;
+    color: white;
     list-style: none;
     margin: 0px;
     padding: 0px;
-    backdrop-filter: blur(81.5485px);
-    background: rgba(255, 255, 255, 0.04);
-    max-width: 830px;
     height: 60px;
-    display: flex;
     align-items: center;
-    width: 750px;
-    justify-content: space-evenly;
-`
+    width: 1500px;
+    justify-content: space-between;
+    z-index: 999;
 
-const UlStyled = styled.ul`
-    display: flex;
-    margin-left: 100px;
-    margin-right: 100px;
-`
 
-const LiStyled = styled(Link)`
-    list-style: none;
-    margin: 0px;
-    display: flex;
-    padding: 15px;
-    padding: 25px 0;
-    color: #fff;
-    text-decoration: none;
+    .logo{
+        padding: 15px 0;
+    }
 
 `
 
 
 const Nav = (props) => {
-
     const {links} = props
 
+
     return(
-                <NavStyled>
-                        <UlStyled>
-                                <LiStyled links = {links}>
-                                    {links.map(link => (
-                                        <div style = {{marginLeft: 20, marginRight: 20}}>
-                                            <li><LiStyled to = {link.path} >{link.label.toUpperCase()}</LiStyled></li>
-                                        </div>
-                                    ))}
-                                </LiStyled>
-                        </UlStyled>
-                </NavStyled>
+
+            <NavStyled>
+
+                <div  className="logo">
+                    <img src = {NavLogo} />
+                </div>
+                <Burger />
+                
+            </NavStyled>
     )
 }
 

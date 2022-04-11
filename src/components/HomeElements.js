@@ -6,6 +6,22 @@ const SuperTitle = styled.p`
     font-size: 28px;
     text-transform: uppercase;
     color: white;
+
+    @media (max-width: 480px){
+        font-size: 24px;
+    }
+
+    @media (max-width: 380px){
+            width: 80%;
+            margin: 0 auto;
+            font-size: 18px;
+    }
+
+    @media (max-width: 290px){
+        width: 80%;
+        margin: 0 auto;
+        font-size: 14px;
+}
 `
 
 const Space = styled.h1`
@@ -15,12 +31,48 @@ const Space = styled.h1`
     font-size: 150px;
     line-height: 172px;
     color: white;
+
+    @media (max-width: 480px){
+        width:100%;
+        margin: 0 auto;
+        font-size: 120px;
+}
+
+    @media (max-width: 380px){
+            width: 80%;
+            margin: 0 auto;
+            font-size: 70px;
+    }
+    
+    @media (max-width: 290px){
+        width: 80%;
+        margin: 0 auto;
+        font-size: 64px;
+}
 `
 
 const Description = styled.p`
     font-size: 18px;
     line-height: 32px;
     color: white;
+
+    @media (max-width: 480px){
+        width: 80%;
+        font-size: 22px;
+        margin: 0 auto;
+}
+
+    @media (max-width: 380px){
+            width: 80%;
+            margin: 0 auto;
+            font-size: 18px;
+    }
+
+    @media (max-width: 290px){
+        width: 80%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
 `
 
 const Container = styled.div`
@@ -30,6 +82,13 @@ const Container = styled.div`
     justify-content: space-between;
     margin: 0 auto;
     align-items: center;
+
+    @media (max-width: 1150px){
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        text-align: center;
+    }
 `
 
 const DivContent = styled.div`
@@ -50,6 +109,20 @@ const DivButton = styled.div`
     font-size: 32px;
     letter-spacing: 2px;
     line-height: 37px;
+
+    @media (max-width: 480px){
+        width: 220px;
+        height: 220px;
+        border-radius: 110px;
+        font-size: 28px;
+}
+
+@media (max-width: 380px){
+        width: 180px;
+        height: 180px;
+        border-radius: 90px;
+        font-size: 28px;
+}
 `
 
 const HomeElements = () => {

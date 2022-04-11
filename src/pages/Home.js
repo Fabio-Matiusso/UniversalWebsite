@@ -12,11 +12,11 @@ const links = [
         path: '/destination'
     },
     {
-        label: '03 crew',
+        label: '02 crew',
         path: '/crew'
     },
     {
-        label: '00 technology',
+        label: '03 technology',
         path: '/technology'
     },
 
@@ -25,7 +25,7 @@ const links = [
 export default function Home() {
     return (
         <>
-            <Header links={links}/>
+            <Header/>
             <HomeElements />
         </>
     )

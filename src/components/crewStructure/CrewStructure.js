@@ -6,25 +6,6 @@ import BackgroundImage from '../../images/crew/background-crew-desktop.jpg'
 import ImageVictor from '../../images/crew/image-victor-glover.png'
 import { Link } from "react-router-dom";
 
-const links = [
-    {
-        label: '00 Home',
-        path: '/',
-    },
-    {
-        label: '01 destination',
-        path: '/destination'
-    },
-    {
-        label: '03 crew',
-        path: '/crew'
-    },
-    {
-        label: '00 technology',
-        path: '/technology'
-    },
-
-]
 
 const PageBackground = styled.body`
 width: 100vw;
@@ -153,7 +134,7 @@ const CrewStructure = () => {
         <>  
 
         <PageBackground>
-            <Header links={links}/>
+            <Header/>
 
 
             <Zoom left>

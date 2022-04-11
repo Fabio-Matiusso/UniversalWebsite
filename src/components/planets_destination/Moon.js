@@ -1,116 +1,24 @@
 import React, { useState } from "react";
 import styled from 'styled-components'
 import ImageMoon from '../../images/destination/image-moon.png'
-import BackgroundImagePlanets from '../../images/destination/background-destination-desktop.jpg'
 import Header from "../Header";
 import Slide from 'react-reveal/Slide';
 import { Link } from "react-router-dom";
-
-
-const links = [
-    {
-        label: '00 Home',
-        path: '/',
-    },
-    {
-        label: '01 destination',
-        path: '/destination'
-    },
-    {
-        label: '03 crew',
-        path: '/crew'
-    },
-    {
-        label: '00 technology',
-        path: '/technology'
-    },
-
-]
-
-const BackgroundImagePlanetsComponent = styled.body`
-    width: 100vw;
-    height: 100vh;
-    background-image: url(${BackgroundImagePlanets});
-
-`
-
-const Box = styled.div`
-    max-width: 80%;
-    max-height: 576px;
-    display: flex;
-    margin: 0 auto;
-`
-
-const Title = styled.h1`
-    height: 34px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    display: flex;
-    margin: 0 auto;
-    max-width: 1047px;
-    align-self: flex-start;
-`
-
-const TitlePlanet = styled.h1`
-    font-size: 100px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-`
-
-const PlanetSubtitle = styled.p`
-    color: #fff;
-    font-size: 18px;
-    line-height: 32px;
-`
-
-const PlanetAndDesc = styled.div`
-    width: 90%;
-    height: 500px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-`
-
-const DescPlanet = styled.div`
-    width: 445px;
-    height: 472px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-`
-
-const PlanetOption = styled.ul`
-    display: flex;
-    color: #fff;
-`
-
-const LiPlanetValue = styled(Link)`
-    list-style: none;
-    padding: 5px;
-    align-self: flex-end;
-    text-decoration: none;
-    color: #fff;
-`
-
-const Distances = styled.div`
-    display: flex;
-    justify-content: flex-start;
-`
-
-const DistanceTitle = styled.p`
-    font-size: 14px;
-    letter-spacing: 2.36px;
-    padding: 10px;
-    color: #fff;
-`
-
-const DistanceNumber = styled.p`
-    font-size: 28px;
-    padding: 10px;
-    color: #fff;
-`
+import { links } from "../../pages/Destination";
+import {BackgroundImagePlanetsComponent} from './StyledComponentsPlanets'
+import { ContainerImg } from "./StyledComponentsPlanets";
+import { Img } from "./StyledComponentsPlanets";
+import { Box } from "./StyledComponentsPlanets";
+import { Title } from "./StyledComponentsPlanets";
+import { TitlePlanet } from "./StyledComponentsPlanets";
+import { PlanetSubtitle } from "./StyledComponentsPlanets";
+import { PlanetAndDesc } from "./StyledComponentsPlanets";
+import { DescPlanet } from "./StyledComponentsPlanets";
+import { PlanetOption } from "./StyledComponentsPlanets";
+import { LiPlanetValue } from "./StyledComponentsPlanets";
+import { Distances } from "./StyledComponentsPlanets";
+import { DistanceTitle } from "./StyledComponentsPlanets";
+import { DistanceNumber } from "./StyledComponentsPlanets";
 
 
 const Moon = () => {
@@ -150,11 +58,11 @@ const Moon = () => {
             <Title>01 pick your destination</Title>
                 <Box>
                     <PlanetAndDesc>
-                        <div style={{margin: "0px 20px"}}>
-                            <img  src = {ImageMoon} style = {{width: 400, height: 400, display: "flex", alignItems: "center"}}/>   
-                        </div>
+                        <ContainerImg>
+                                <Img  src = {ImageMoon}/>    
+                        </ContainerImg>
 
-                        <DescPlanet style={{margin: "0px 0px 0px 100px"}}>
+                        <DescPlanet>
                             <PlanetOption>
 
                                 <LiPlanetValue to = '/moon' onClick={() => {changeToMoon()}}>MOON</LiPlanetValue>

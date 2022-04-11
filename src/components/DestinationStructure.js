@@ -12,36 +12,6 @@ import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
 
 
-const links = [
-    {
-        label: '00 Home',
-        path: '/',
-    },
-    {
-        label: '01 destination',
-        path: '/destination'
-    },
-    {
-        label: '03 crew',
-        path: '/crew'
-    },
-    {
-        label: '00 technology',
-        path: '/technology'
-    },
-
-]
-
-const PlanetOption = styled.ul`
-    display: flex;
-    color: #fff;
-`
-
-const LiPlanetValue = styled.li`
-    list-style: none;
-    padding: 5px;
-    align-self: flex-end;
-`
 
 
 const DestinationStructure = (props) => {

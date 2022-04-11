@@ -10,3 +10,9 @@ body{
     background-image: url('./images/home/background-home-desktop.jpg');
     background-size: cover;
 }
+
+@media (max-width: 1150px) {
+    body{
+        background-image: url('./images/home/background-home-tablet.jpg');
+    }
+}
