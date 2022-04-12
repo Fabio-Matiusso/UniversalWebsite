@@ -23,7 +23,7 @@ const TitlePage = styled.div`
     width: 400px;
 `
 
-const SpanStyled = styled.span`
+export const SpanStyled = styled.span`
     font-style: normal;
     font-weight: 700;
     font-size: 28px;

@@ -10,6 +10,7 @@ import Mark from "./components/crewStructure/Mark";
 import Victor from "./components/crewStructure/Victor";
 import Anousheh from "./components/crewStructure/Anousheh";
 import Home from "./pages/Home";
+import Technology from "./components/technology/Technology";
 
 export default function Routerr() {
     return(
@@ -26,7 +27,7 @@ export default function Routerr() {
                 <Route exact path = "/mark" component={Mark}/>
                 <Route exact path = "/victor" component={Victor}/>
                 <Route exact path = "/anousheh" component={Anousheh}/>
-                {/* <Route exact path="/technology" component={Tecnology} /> */}
+                <Route exact path="/technology" component={Technology} />
             </Switch>
         </BrowserRouter>
     )
