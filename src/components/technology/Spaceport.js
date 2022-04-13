@@ -31,9 +31,9 @@ const Spaceport = () => {
                     </SpaceLaunch>
 
                     <LateralUlStyled>
-                    <LinkStyled to = "/launchVehicle"><LateralLiStyled>1</LateralLiStyled></LinkStyled>
-                    <LinkStyled to = "/spaceport"><LateralLiStyledActive>2</LateralLiStyledActive></LinkStyled>
-                    <LinkStyled to = "/spacecapsule"><LateralLiStyled>3</LateralLiStyled></LinkStyled>
+                        <LinkStyled to = "/launchVehicle"><LateralLiStyled>1</LateralLiStyled></LinkStyled>
+                        <LinkStyled to = "/spaceport"><LateralLiStyledActive>2</LateralLiStyledActive></LinkStyled>
+                        <LinkStyled to = "/spacecapsule"><LateralLiStyled>3</LateralLiStyled></LinkStyled>
                     </LateralUlStyled>
 
                     <ContainerContent>

@@ -63,6 +63,7 @@ export const TitlePage = styled.div`
     @media (max-width: 560px){
         margin-left: 40px;
     }
+
 `
 
 export const SpanStyled = styled.span`
@@ -76,6 +77,16 @@ export const SpanStyled = styled.span`
     opacity: 0.25;
     border: 1px solid #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 400px){
+        font-size: 24px ;
+    }
+
+    @media (max-width: 330px) {
+        margin: 0 auto;
+        width: 60%;
+        font-size: 18px;
+    }
 `
 
 export const MeetOurCrew = styled.span`
@@ -100,19 +111,18 @@ export const MeetOurCrew = styled.span`
     @media (max-width: 400px) {
         margin: 0 auto;
         width: 80%;
-        font-size: 30px;
+        font-size: 24px;
     }
 
     @media (max-width: 370px) {
         margin: 0 auto;
         width: 70%;
-        font-size: 28px;
     }
 
     @media (max-width: 330px) {
         margin: 0 auto;
         width: 60%;
-        font-size: 24px;
+        font-size: 18px;
     }
 `
 
@@ -327,6 +337,10 @@ export const CircleSlide = styled(Link)`
     border-radius: 7.5px;
     background-color: #fff;
     opacity: 0.5;
+
+    @media (max-width: 330px) {
+        margin-top: 10px;
+    }
 `
 
 export const CircleSlideActive = styled(Link)`
@@ -335,6 +349,10 @@ export const CircleSlideActive = styled(Link)`
     border-radius: 7.5px;
     background-color: #fff;
     cursor: pointer;
+
+    @media (max-width: 330px) {
+        margin-top: 10px;
+    }
 `
 
 export const Img = styled.img`

@@ -45,9 +45,12 @@ export const ContainerGrid = styled.div`
     }
 
     @media (max-width: 400px){
-        grid-template-rows: 80px 500px;
+        grid-template-rows: 80px 590px;
     }
-
+    
+    @media (max-width: 370px){
+        grid-template-rows: 80px 600px;
+    }
 
 `
 
@@ -66,6 +69,12 @@ export const SpaceLaunch = styled.div`
         justify-self: center;
         align-self: center;
     }
+
+    @media (max-width: 400px) {
+        width: 80%;
+        text-align: center;
+        flex-direction: column;
+    }
 `
 
 export const StyledNumberSpaceLaunch = styled.span`
@@ -73,12 +82,28 @@ export const StyledNumberSpaceLaunch = styled.span`
     opacity: 0.25;
     font-size: 28px;
     letter-spacing: 4.725px;
+
+    @media (max-width: 400px) {
+        font-size: 24px;
+    }
+
+    @media (max-width: 360px){
+        font-size: 22px;
+    }
 `
 
 export const StyledTextSpaceLaunch = styled.span`
     color: #FFF;
     font-size: 28px;
     letter-spacing: 4.725px;
+
+    @media (max-width: 400px) {
+        font-size: 24px;
+    }
+
+    @media (max-width: 360px){
+        font-size: 22px;
+    }
 `
 
 export const LateralUlStyled = styled.ul`
@@ -107,6 +132,10 @@ export const LateralUlStyled = styled.ul`
         grid-row: 2;
         align-self: flex-start;
     }
+
+    @media (max-width: 360px){
+        width: 80%;
+    }
 `
 
 export const LinkStyled = styled(Link)`
@@ -122,6 +151,12 @@ export const LateralLiStyledActive = styled.li`
     height: 80px;
     border-radius: 40px;
     background-color: #FFF;
+
+    @media (max-width: 360px){
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
 `
 
 export const LateralLiStyled = styled.li`
@@ -134,6 +169,12 @@ export const LateralLiStyled = styled.li`
     background-color: transparent;
     color: #FFF;
     border: 1px solid #fff;
+
+    @media (max-width: 360px){
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
 `
 
 export const ContainerContent = styled.div`
@@ -160,7 +201,7 @@ export const ContainerContent = styled.div`
 
     @media (max-width: 400px){
         grid-row: 2;
-        align-self: flex-end;
+        align-self: center;
         width: 70%;
     }
 `
@@ -181,6 +222,10 @@ export const LaunchVehicle = styled.h1`
     line-height: 64px;
     color: #FFF;
     text-transform: uppercase;
+
+    @media (max-width: 360px){
+        font-size: 40px;
+    }
 `
 
 export const LaunchVehicleDescription = styled.p`
@@ -189,6 +234,10 @@ export const LaunchVehicleDescription = styled.p`
     font-size: 18px;
     line-height: 32px;
     color: #D0D6F9;
+
+    @media (max-width: 360px){
+        font-size: 14px;
+    }
 `
 
 export const Image = styled.img`
