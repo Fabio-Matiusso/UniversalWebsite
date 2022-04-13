@@ -11,6 +11,9 @@ import Victor from "./components/crewStructure/Victor";
 import Anousheh from "./components/crewStructure/Anousheh";
 import Home from "./pages/Home";
 import Technology from "./components/technology/Technology";
+import LaunchVehicleComponent from "./components/technology/LaunchVehicle";
+import Spaceport from "./components/technology/Spaceport";
+import SpaceCapsule from "./components/technology/SpaceCapsule";
 
 export default function Routerr() {
     return(
@@ -28,6 +31,9 @@ export default function Routerr() {
                 <Route exact path = "/victor" component={Victor}/>
                 <Route exact path = "/anousheh" component={Anousheh}/>
                 <Route exact path="/technology" component={Technology} />
+                <Route exact path="/launchvehicle" component={LaunchVehicleComponent} />
+                <Route exact path="/spaceport" component={Spaceport} />
+                <Route exact path="/spacecapsule" component={SpaceCapsule} />
             </Switch>
         </BrowserRouter>
     )
