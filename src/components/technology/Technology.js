@@ -1,7 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
 import Zoom from 'react-reveal/Zoom';
-import { SpanStyled } from "../crewStructure/CrewStructure";
 import Header from "../Header";
 import BackgroundImage from '../../images/technology/background-technology-desktop.jpg'
 import { Link } from "react-router-dom";
@@ -9,215 +8,196 @@ import RocketImage from '../../images/technology/image-launch-vehicle-portrait.j
 import RocketImageTwo from '../../images/technology/image-launch-vehicle-landscape.jpg'
 
 export const BackgroundImagePage = styled.body`
-    width: 100vw;
-    height: 200vh;
     background-image: url(${BackgroundImage});
     background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
     background-size: cover;
+    background-position: top right;
+    @media (max-width: 920px) {
+    }
 `
 
-export const SpaceLaunch = styled.span`
+export const ContainerGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-rows: 150px 300px 200px;
+
+    @media (max-width: 920px) {
+        grid-template-columns: auto;
+        grid-template-rows: 150px 350px 150px 400px;
+    }
+
+    @media (max-width: 820px){
+        grid-template-rows: 150px 330px 120px 300px;
+    }
+
+    @media (max-width: 720px){
+        grid-template-rows: 150px 330px 115px 330px;
+
+    }
+
+    @media (max-width: 570px){
+        grid-template-rows: 120px 300px 110px 350px;
+
+    }
+
+    @media (max-width: 540px){
+        grid-template-rows: 100px 250px 150px 400px;
+
+    }
+    @media (max-width: 500px){
+        grid-template-rows: 90px 300px 130px 410px;
+    }
+
+    @media (max-width: 400px){
+        grid-template-rows: 80px 370px 120px 430px;
+    }
+
+
+`
+
+export const SpaceLaunch = styled.div`
+    width: 380px;
+    display: flex;
+    justify-content: space-evenly;
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: left;
+    align-self: center;
+
+    @media (max-width: 920px) {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+        align-self: center;
+    }
+`
+
+export const StyledNumberSpaceLaunch = styled.span`
+    color: #FFF;
+    opacity: 0.25;
+    font-size: 28px;
+    letter-spacing: 4.725px;
+`
+
+export const StyledTextSpaceLaunch = styled.span`
+    color: #FFF;
+    font-size: 28px;
+    letter-spacing: 4.725px;
+`
+
+export const LateralUlStyled = styled.ul`
+    display: flex;
+    flex-direction: column;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: flex-start;
+    justify-content: space-evenly;
+
+    @media (max-width: 920px) {
+        grid-row: 3;
+        grid-column: 1;
+        flex-direction: row;
+        justify-self: center;
+        align-self: center;
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    @media (max-width: 550px){
+        width: 70%;
+    }
+`
+
+export const LateralLiStyled = styled.li`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #FFF;
+`
+
+export const ContainerContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-row: 2;
+    grid-column: 2;
+    width: 80%;
+    justify-self: flex-end;
+
+    @media (max-width: 920px) {
+        grid-column: 1;
+        grid-row: 4;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        width: 60%;
+    }
+
+    @media (max-width: 720px){
+        width: 80%;
+    }
+`
+
+export const Terminology = styled.h2`
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #D0D6F9;
+`
+
+export const LaunchVehicle = styled.h1`
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: 4.725px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-
-    @media (max-width: 915px) {
-x;
-    }
-
-    @media (max-width: 450px) {
-        font-size: 22px;
-    }
-    
-
-`
-
-export const ContainerTechnology = styled.div`
-    width: 80%;
-    height: 587px;
-    display: flex;
-    width: 100vw;
-    flex-direction: column;
-
-    @media (max-width: 915px) {
-
-    }
-
-    @media (max-width: 590px) {
-    }
-
-`
-
-export const TechnologyList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 90%;
-    align-items: flex-end;
-
-    @media (max-width: 915px) {
-        flex-direction: row;
-    }
-
-    @media (max-width: 320px){
-
-    }
-`
-
-const StyledListTechnology = styled.li`
-        background-color: #fff;
-        color: black;
-        width: 80px;
-        height: 80px;
-        border-radius: 40px;
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-self: flex-end;
-
-        @media (max-width: 915px){
-            width: 60px;
-            height: 60px;
-            border-radius: 30px;
-        }
-
-        @media (max-width: 320px){
-            width: 40px;
-            height: 40px;
-            border-radius: 20px;
-        }
-`
-
-const ContainerContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    width: 400%;
-
-    @media (max-width: 915px) {
-        height: 300px;
-        width: 80vw;
-        flex-direction: column;
-        align-items: center;
-        align-self: flex-start;
-        text-align: center;
-        justify-content: space-evenly;
-        justify-self: center;
-    }
-
-    @media (max-width: 320px){
-        width: 80%;
-        align-self: flex-start;
-    }
-    
-`
-
-const StyledH3 = styled.h3`
-    font-size: 16px;
-    font-weight: 400;
-    color: #D0D6F9;
-    width: 90%;
-
-
-    @media (max-width: 915px) {
-        font-size: 16px;
-    }
-
-    @media (max-width: 320px){
-        font-size: 12px;
-    }
-`
-
-const StyledH1 = styled.h1`
-    font-weight: 400;
-    font-size: 50px;
+    font-size: 56px;
     line-height: 64px;
-    color: #fff;
-    width: 90%;
-
-    @media (max-width: 915px) {
-        font-size: 40px;
-    }
-
-    @media (max-width: 320px){
-        font-size: 30px;
-    }
+    color: #FFF;
+    text-transform: uppercase;
 `
 
-const StyledDescription = styled.p`
+export const LaunchVehicleDescription = styled.p`
+    font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
     color: #D0D6F9;
-    width: 90%;
-
-    @media (max-width: 915px) {
-        font-size: 16px;
-    }
 `
+
 const Image = styled.img`
     width: 348px;
     height: 420px;
     align-self: center;
-    justify-self: flex-start;
-
+    justify-self: flex-end;
+    grid-row: 2;
+    grid-column: 3;
     @media (max-width: 915px){
         display: none;
     }
 `
 
 const ImageTwo = styled.img`
-
-    @media (min-width: 915px){
+    @media (min-width: 920px){
         display: none;
     }
-
-    @media (max-width: 915px) {
-        width: 100vw;
+    @media (max-width: 920px) {
+        width: 100%;
         justify-self: center;
+        grid-column: 1;
+    }
+    @media (max-width: 720px){
+        height: 80%;
+        position: static;
     }
 
-    @media (max-width: 450px) {
-        height: 350px;
+    @media (max-width: 400px){  
     }
-
-    @media (max-width: 320px) {
-        max-width: 100vw;
-        height: 150px;
-        align-self: center;
-    }
-`
-
-export const ContainerOfSpan = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
-
-    @media (max-width: 915px) {
-        justify-content: center;
-        align-self: center;
-        width: 400px;
-    }
-
-    
-`
-
-const FlexGroupOne = styled.div`
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-`
-
-const FlexGroupTwo = styled.div`
-    display: flex;
-    width: 80%;
-    justify-content: flex-end;
 `
 
 const Technology = () => {
@@ -226,31 +206,27 @@ const Technology = () => {
             <Header />
 
             <Zoom left>
-                <ContainerTechnology>
+                <ContainerGrid>
+                    <SpaceLaunch>
+                        <StyledNumberSpaceLaunch>03</StyledNumberSpaceLaunch>
+                        <StyledTextSpaceLaunch>SPACE LAUNCH 101</StyledTextSpaceLaunch>
+                    </SpaceLaunch>
 
-                    <FlexGroupOne>
-                        <ContainerOfSpan> 
-                            <SpanStyled style={{marginLeft: 30}}>03</SpanStyled> <SpaceLaunch>SPACE LAUNCH 101</SpaceLaunch>
-                        </ContainerOfSpan>
-                    </FlexGroupOne>
+                    <LateralUlStyled>
+                        <LateralLiStyled>1</LateralLiStyled>
+                        <LateralLiStyled>2</LateralLiStyled>
+                        <LateralLiStyled>3</LateralLiStyled>
+                    </LateralUlStyled>
 
-                    <FlexGroupTwo>
-                        <TechnologyList>
-                            <StyledListTechnology>1</StyledListTechnology>
-                            <StyledListTechnology>2</StyledListTechnology>
-                            <StyledListTechnology>3</StyledListTechnology>
-                        </TechnologyList>
+                    <ContainerContent>
+                        <Terminology>The terminology</Terminology>
+                        <LaunchVehicle>Launch vehicle</LaunchVehicle>
+                        <LaunchVehicleDescription>A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</LaunchVehicleDescription>
+                    </ContainerContent>
 
-                        <ContainerContent>
-                            <StyledH3>THE TERMINOLOGY...</StyledH3>
-                            <StyledH1>LAUNCH VEHICLE</StyledH1>
-                            <StyledDescription>A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</StyledDescription>
-                        </ContainerContent>
-
-                        <Image src = {RocketImage}/>
-                        <ImageTwo src = {RocketImageTwo}/>
-                    </FlexGroupTwo>
-                </ContainerTechnology>
+                    <Image src = {RocketImage} />
+                    <ImageTwo src = {RocketImageTwo}/>
+                </ContainerGrid>
             </Zoom>
         </BackgroundImagePage>
     )

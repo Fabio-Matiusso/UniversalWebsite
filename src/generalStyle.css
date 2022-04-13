@@ -9,6 +9,7 @@
 body{
     background-image: url('./images/home/background-home-desktop.jpg');
     background-size: cover;
+    overflow-x: hidden;
 }
 
 @media (max-width: 1150px) {
