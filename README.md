@@ -9,9 +9,9 @@
 
 # Features 🪐
 
-[x]Esse projeto representa o sistema de uma empresa da Área de exploração espacial, mostrando dados sobre planetas, os tripulantes que trabalham nessa empresa, e as tecnologias espaciais que a empresa utiliza. <br>
-[x]O projeto é responsivo a fim de entregar uma melhor experiência de usuário a quem acessa o site por meio de dispositivos móveis. <br>
-[x]É utilizada a navegação por meio do React-router-dom, fazendo com que a página não recarregue cada vez que o usuário clicar em um link, resultando em um site mais rápido de ser utilizado
+- [x]Esse projeto representa o sistema de uma empresa da Área de exploração espacial, mostrando dados sobre planetas, os tripulantes que trabalham nessa empresa, e as tecnologias espaciais que a empresa utiliza. <br>
+- [x]O projeto é responsivo a fim de entregar uma melhor experiência de usuário a quem acessa o site por meio de dispositivos móveis. <br>
+- [x]É utilizada a navegação por meio do React-router-dom, fazendo com que a página não recarregue cada vez que o usuário clicar em um link, resultando em um site mais rápido de ser utilizado
 
 ---
 
