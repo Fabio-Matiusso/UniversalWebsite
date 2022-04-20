@@ -15,6 +15,15 @@
 
 ---
 
+# Tecnologias utilizadas
+
+- [x] Javascript
+- [x] ReactJs
+- [x] Styled-components
+- [x] React-router-dom
+- [x] React Hooks
+
+
 <br>
 
 # Demo Desktop 📷
@@ -34,3 +43,7 @@
 <h1 align = "center">
     <img alt = "GIF" title = "GIF" src = "./src/github/gif-smartphone-space-website.gif"/>
 </h1>
+
+<br>
+
+# Feito com ❤️ por Fabio Del Col Matiusso
