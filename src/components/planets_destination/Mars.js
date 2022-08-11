@@ -40,7 +40,7 @@ const Mars = () => {
       title,
       planetOptions,
       titlePlanet,
-      PlanetSubtitle,
+      planetSubtitle,
       distanceTitle,
       km,
       travelTimeTitle,
@@ -68,12 +68,12 @@ const Mars = () => {
                     ))}
                   </PlanetOption>
                   <TitlePlanet>{titlePlanet}</TitlePlanet>
-                  <PlanetSubtitle>{PlanetSubtitle}</PlanetSubtitle>
+                  <PlanetSubtitle>{planetSubtitle}</PlanetSubtitle>
                   <hr />
                   <Distances>
                     <div>
                       <DistanceTitle>{distanceTitle}</DistanceTitle>
-                      <DistanceNumber>{DistanceNumber}</DistanceNumber>
+                      <DistanceNumber>{km}</DistanceNumber>
                     </div>
 
                     <div>
