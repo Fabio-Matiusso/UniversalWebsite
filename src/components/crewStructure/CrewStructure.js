@@ -27,11 +27,17 @@ const CrewStructure = () => {
       pilotName: 'Victor Glover',
       description:
         'Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. ',
+      paths: [
+        { path: '/douglas' },
+        { path: '/mark' },
+        { path: '/victor' },
+        { path: '/anousheh' },
+      ],
     },
   ];
 
   return infos.map(
-    ({ number, callToAction, ocupation, pilotName, description }) => (
+    ({ number, callToAction, ocupation, pilotName, description, paths }) => (
       <>
         <PageBackground>
           <Header />
@@ -55,10 +61,9 @@ const CrewStructure = () => {
               </PilotImage>
 
               <Slider>
-                <CircleSlide to="/douglas" />
-                <CircleSlide to="/mark" />
-                <CircleSlide to="/victor" />
-                <CircleSlideActive to="/anousheh" />
+                {paths.map(({ path }) => (
+                  <CircleSlide to={path} />
+                ))}
               </Slider>
             </Box>
           </Bounce>

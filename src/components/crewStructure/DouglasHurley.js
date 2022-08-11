@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../Header';
 import Bounce from 'react-reveal/Bounce';
+import ImageDouglas from '../../images/crew/image-douglas-hurley.png';
+
 import {
   PageBackground,
   Box,
@@ -28,11 +30,17 @@ const DouglasHurley = () => {
       pilotName: 'douglas hurley',
       description:
         'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
+      paths: [
+        { path: '/douglas' },
+        { path: '/mark' },
+        { path: '/victor' },
+        { path: '/anousheh' },
+      ],
     },
   ];
 
   return infos.map(
-    ({ number, callToAction, ocupation, pilotName, description }) => (
+    ({ number, callToAction, ocupation, pilotName, description, paths }) => (
       <>
         <PageBackground>
           <Header />
@@ -52,14 +60,13 @@ const DouglasHurley = () => {
                 </PilotDesc>
               </CrewContent>
               <PilotImage>
-                <Img src={ImageAnousheh} />
+                <Img src={ImageDouglas} />
               </PilotImage>
 
               <Slider>
-                <CircleSlide to="/douglas" />
-                <CircleSlide to="/mark" />
-                <CircleSlide to="/victor" />
-                <CircleSlideActive to="/anousheh" />
+                {paths.map(({ path }) => (
+                  <CircleSlide to={path} />
+                ))}
               </Slider>
             </Box>
           </Bounce>

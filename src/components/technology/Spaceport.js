@@ -1,53 +1,74 @@
-import { BackgroundImagePage } from "./styledComponents";
-import { ContainerGrid } from "./styledComponents";
-import { SpaceLaunch } from "./styledComponents";
-import { StyledNumberSpaceLaunch } from "./styledComponents";
-import { StyledTextSpaceLaunch } from "./styledComponents";
-import { LateralUlStyled } from "./styledComponents";
-import { LateralLiStyled } from "./styledComponents";
-import { LateralLiStyledActive } from "./styledComponents";
-import { LinkStyled } from "./styledComponents";
-import { ContainerContent } from "./styledComponents";
-import { Terminology } from "./styledComponents";
-import { LaunchVehicle } from "./styledComponents";
-import { LaunchVehicleDescription } from "./styledComponents";
-import { Image } from "./styledComponents";
-import { ImageTwo } from "./styledComponents";
-import Header from "../Header";
-import RocketImage from '../../images/technology/image-spaceport-portrait.jpg'
-import RocketImageTwo from '../../images/technology/image-spaceport-landscape.jpg'
-import Fade from 'react-reveal/Fade';
+import {
+  BackgroundImagePage,
+  ContainerGrid,
+  SpaceLaunch,
+  StyledNumberSpaceLaunch,
+  StyledTextSpaceLaunch,
+  LateralUlStyled,
+  LateralLiStyled,
+  LateralLiStyledActive,
+  LinkStyled,
+  ContainerContent,
+  Terminology,
+  LaunchVehicle,
+  LaunchVehicleDescription,
+  ImageTwo,
+} from './styledComponents';
+import Header from '../Header';
+import RocketImage from '../../images/technology/image-spaceport-portrait.jpg';
+import RocketImageTwo from '../../images/technology/image-spaceport-landscape.jpg';
+import Zoom from 'react-reveal/Fade';
 
 const Spaceport = () => {
-    return(
-        <BackgroundImagePage>
-            <Header />
+  const infos = [
+    {
+      number: 03,
+      title: 'SPACE LAUNCH 101',
+      paths: [
+        { path: '/launchVehicle', index: 1 },
+        { path: '/spaceport', index: 2 },
+        { path: '/spacecapsule', index: 3 },
+      ],
+      terminology: 'The Terminology',
+      name: 'LAUNCH VEHICLE',
+      description:
+        'A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth`s surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it`s quite an awe-inspiring sight on the launch pad!',
+    },
+  ];
 
-            <Fade left>
-                <ContainerGrid>
-                    <SpaceLaunch>
-                        <StyledNumberSpaceLaunch>03</StyledNumberSpaceLaunch>
-                        <StyledTextSpaceLaunch>SPACE LAUNCH 101</StyledTextSpaceLaunch>
-                    </SpaceLaunch>
+  return infos.map(
+    ({ number, title, paths, terminology, name, description }) => (
+      <BackgroundImagePage>
+        <Header />
 
-                    <LateralUlStyled>
-                        <LinkStyled to = "/launchVehicle"><LateralLiStyled>1</LateralLiStyled></LinkStyled>
-                        <LinkStyled to = "/spaceport"><LateralLiStyledActive>2</LateralLiStyledActive></LinkStyled>
-                        <LinkStyled to = "/spacecapsule"><LateralLiStyled>3</LateralLiStyled></LinkStyled>
-                    </LateralUlStyled>
+        <Zoom left>
+          <ContainerGrid>
+            <SpaceLaunch>
+              <StyledNumberSpaceLaunch>{number}</StyledNumberSpaceLaunch>
+              <StyledTextSpaceLaunch>{title}</StyledTextSpaceLaunch>
+            </SpaceLaunch>
 
-                    <ContainerContent>
-                        <Terminology>The terminology</Terminology>
-                        <LaunchVehicle>spaceport</LaunchVehicle>
-                        <LaunchVehicleDescription>A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.</LaunchVehicleDescription>
-                    </ContainerContent>
+            {paths.map(({ path, index }) => (
+              <LateralUlStyled>
+                <LinkStyled to={path}>
+                  <LateralLiStyledActive>{index}</LateralLiStyledActive>
+                </LinkStyled>
+              </LateralUlStyled>
+            ))}
 
-                    <Image src = {RocketImage} />
-                    <ImageTwo src = {RocketImageTwo}/>
-                </ContainerGrid>
-            </Fade>
-        </BackgroundImagePage>
-    )
-}
+            <ContainerContent>
+              <Terminology>{terminology}</Terminology>
+              <LaunchVehicle>{name}</LaunchVehicle>
+              <LaunchVehicleDescription>{description}</LaunchVehicleDescription>
+            </ContainerContent>
 
-export default Spaceport
+            <Image src={RocketImage} />
+            <ImageTwo src={RocketImageTwo} />
+          </ContainerGrid>
+        </Zoom>
+      </BackgroundImagePage>
+    ),
+  );
+};
+
+export default Spaceport;

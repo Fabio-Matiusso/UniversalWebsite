@@ -29,11 +29,17 @@ const Anousheh = () => {
       pilotName: 'Anousheh Ansari',
       description:
         'Anoushe Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space',
+      paths: [
+        { path: '/douglas' },
+        { path: '/mark' },
+        { path: '/victor' },
+        { path: '/anousheh' },
+      ],
     },
   ];
 
   return infos.map(
-    ({ number, callToAction, ocupation, pilotName, description }) => (
+    ({ number, callToAction, ocupation, pilotName, description, paths }) => (
       <>
         <PageBackground>
           <Header />
@@ -57,10 +63,9 @@ const Anousheh = () => {
               </PilotImage>
 
               <Slider>
-                <CircleSlide to="/douglas" />
-                <CircleSlide to="/mark" />
-                <CircleSlide to="/victor" />
-                <CircleSlideActive to="/anousheh" />
+                {paths.map(({ path }) => (
+                  <CircleSlide to={path} />
+                ))}
               </Slider>
             </Box>
           </Bounce>

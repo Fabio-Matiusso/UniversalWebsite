@@ -1,53 +1,74 @@
-import { BackgroundImagePage } from "./styledComponents";
-import { ContainerGrid } from "./styledComponents";
-import { SpaceLaunch } from "./styledComponents";
-import { StyledNumberSpaceLaunch } from "./styledComponents";
-import { StyledTextSpaceLaunch } from "./styledComponents";
-import { LateralUlStyled } from "./styledComponents";
-import { LateralLiStyled } from "./styledComponents";
-import { LateralLiStyledActive } from "./styledComponents";
-import { LinkStyled } from "./styledComponents";
-import { ContainerContent } from "./styledComponents";
-import { Terminology } from "./styledComponents";
-import { LaunchVehicle } from "./styledComponents";
-import { LaunchVehicleDescription } from "./styledComponents";
-import { Image } from "./styledComponents";
-import { ImageTwo } from "./styledComponents";
+import {
+  BackgroundImagePage,
+  ContainerGrid,
+  SpaceLaunch,
+  StyledNumberSpaceLaunch,
+  StyledTextSpaceLaunch,
+  LateralUlStyled,
+  LateralLiStyled,
+  LateralLiStyledActive,
+  LinkStyled,
+  ContainerContent,
+  Terminology,
+  LaunchVehicle,
+  LaunchVehicleDescription,
+  ImageTwo,
+} from './styledComponents';
 import Fade from 'react-reveal/Fade';
-import Header from "../Header";
-import RocketImage from '../../images/technology/image-space-capsule-portrait.jpg'
-import RocketImageTwo from '../../images/technology/image-space-capsule-landscape.jpg'
+import Header from '../Header';
+import RocketImage from '../../images/technology/image-space-capsule-portrait.jpg';
+import RocketImageTwo from '../../images/technology/image-space-capsule-landscape.jpg';
 
 const SpaceCapsule = () => {
-    return(
-        <BackgroundImagePage>
-            <Header />
+  const infos = [
+    {
+      number: 03,
+      title: 'SPACE LAUNCH 101',
+      paths: [
+        { path: '/launchVehicle', index: 1 },
+        { path: '/spaceport', index: 2 },
+        { path: '/spacecapsule', index: 3 },
+      ],
+      terminology: 'The Terminology',
+      name: 'LAUNCH VEHICLE',
+      description:
+        'A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth`s surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it`s quite an awe-inspiring sight on the launch pad!',
+    },
+  ];
 
-            <Fade left>
-                <ContainerGrid>
-                    <SpaceLaunch>
-                        <StyledNumberSpaceLaunch>03</StyledNumberSpaceLaunch>
-                        <StyledTextSpaceLaunch>SPACE LAUNCH 101</StyledTextSpaceLaunch>
-                    </SpaceLaunch>
+  return infos.map(
+    ({ number, title, paths, terminology, name, description }) => (
+      <BackgroundImagePage>
+        <Header />
 
-                    <LateralUlStyled>
-                        <LinkStyled to = "/launchVehicle"><LateralLiStyled>1</LateralLiStyled></LinkStyled>
-                        <LinkStyled to = "/spaceport"><LateralLiStyled>2</LateralLiStyled></LinkStyled>
-                        <LinkStyled to = "/spacecapsule"><LateralLiStyledActive>3</LateralLiStyledActive></LinkStyled>
-                    </LateralUlStyled>
+        <Zoom left>
+          <ContainerGrid>
+            <SpaceLaunch>
+              <StyledNumberSpaceLaunch>{number}</StyledNumberSpaceLaunch>
+              <StyledTextSpaceLaunch>{title}</StyledTextSpaceLaunch>
+            </SpaceLaunch>
 
-                    <ContainerContent>
-                        <Terminology>The terminology</Terminology>
-                        <LaunchVehicle>Space capsule</LaunchVehicle>
-                        <LaunchVehicleDescription>A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.</LaunchVehicleDescription>
-                    </ContainerContent>
+            {paths.map(({ path, index }) => (
+              <LateralUlStyled>
+                <LinkStyled to={path}>
+                  <LateralLiStyledActive>{index}</LateralLiStyledActive>
+                </LinkStyled>
+              </LateralUlStyled>
+            ))}
 
-                    <Image src = {RocketImage} />
-                    <ImageTwo src = {RocketImageTwo}/>
-                </ContainerGrid>
-            </Fade>
-        </BackgroundImagePage>
-    )
-}
+            <ContainerContent>
+              <Terminology>{terminology}</Terminology>
+              <LaunchVehicle>{name}</LaunchVehicle>
+              <LaunchVehicleDescription>{description}</LaunchVehicleDescription>
+            </ContainerContent>
 
-export default SpaceCapsule
+            <Image src={RocketImage} />
+            <ImageTwo src={RocketImageTwo} />
+          </ContainerGrid>
+        </Zoom>
+      </BackgroundImagePage>
+    ),
+  );
+};
+
+export default SpaceCapsule;

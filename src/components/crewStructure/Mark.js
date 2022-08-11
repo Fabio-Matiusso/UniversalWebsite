@@ -1,5 +1,7 @@
 import Header from '../Header';
 import Bounce from 'react-reveal/Bounce';
+import ImageMark from '../../images/crew/image-mark-shuttleworth.png';
+
 import {
   PageBackground,
   Box,
@@ -18,7 +20,6 @@ import {
   CircleSlide,
 } from './StyledComponentsCrew';
 
-
 const Mark = () => {
   const infos = [
     {
@@ -32,7 +33,7 @@ const Mark = () => {
   ];
 
   return infos.map(
-    ({ number, callToAction, ocupation, pilotName, description }) => (
+    ({ number, callToAction, ocupation, pilotName, description, paths }) => (
       <>
         <PageBackground>
           <Header />
@@ -52,14 +53,13 @@ const Mark = () => {
                 </PilotDesc>
               </CrewContent>
               <PilotImage>
-                <Img src={ImageAnousheh} />
+                <Img src={ImageMark} />
               </PilotImage>
 
               <Slider>
-                <CircleSlide to="/douglas" />
-                <CircleSlide to="/mark" />
-                <CircleSlide to="/victor" />
-                <CircleSlideActive to="/anousheh" />
+                {paths.map(({ path }) => (
+                  <CircleSlide to={path} />
+                ))}
               </Slider>
             </Box>
           </Bounce>
