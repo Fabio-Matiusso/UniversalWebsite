@@ -28,7 +28,7 @@ const Titan = () => {
       title: '01 pick your destination',
       planetOptions: ['MOON', 'MARS', 'EUROPA', 'TITAN'],
       titlePlanet: 'TITAN',
-      PlanetSubtitle:
+      planetSubtitle:
         'The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.',
       distanceTitle: 'AVG. DISTANCE',
       km: '1.6 BIL. km',

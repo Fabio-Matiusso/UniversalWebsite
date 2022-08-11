@@ -26,7 +26,7 @@ const Europa = () => {
       title: '01 pick your destination',
       planetOptions: ['MOON', 'MARS', 'EUROPA', 'TITAN'],
       titlePlanet: 'EUROPA',
-      PlanetSubtitle:
+      planetSubtitle:
         'The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.',
       distanceTitle: 'AVG. DISTANCE',
       km: '628 MIL. km',

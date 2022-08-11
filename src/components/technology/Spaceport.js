@@ -5,6 +5,7 @@ import {
   StyledNumberSpaceLaunch,
   StyledTextSpaceLaunch,
   LateralUlStyled,
+  Image,
   LateralLiStyled,
   LateralLiStyledActive,
   LinkStyled,
@@ -22,10 +23,10 @@ import Zoom from 'react-reveal/Fade';
 const Spaceport = () => {
   const infos = [
     {
-      number: 03,
+      number: '03',
       title: 'SPACE LAUNCH 101',
       paths: [
-        { path: '/launchVehicle', index: 1 },
+        { path: '/launchvehicle', index: 1 },
         { path: '/spaceport', index: 2 },
         { path: '/spacecapsule', index: 3 },
       ],
@@ -48,13 +49,13 @@ const Spaceport = () => {
               <StyledTextSpaceLaunch>{title}</StyledTextSpaceLaunch>
             </SpaceLaunch>
 
-            {paths.map(({ path, index }) => (
-              <LateralUlStyled>
+            <LateralUlStyled>
+              {paths.map(({ path, index }) => (
                 <LinkStyled to={path}>
-                  <LateralLiStyledActive>{index}</LateralLiStyledActive>
+                  <LateralLiStyled>{index}</LateralLiStyled>
                 </LinkStyled>
-              </LateralUlStyled>
-            ))}
+              ))}
+            </LateralUlStyled>
 
             <ContainerContent>
               <Terminology>{terminology}</Terminology>

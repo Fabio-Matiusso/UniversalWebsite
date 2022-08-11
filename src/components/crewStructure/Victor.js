@@ -1,7 +1,6 @@
 import Header from '../Header';
 import Bounce from 'react-reveal/Bounce';
 import ImageVictor from '../../images/crew/image-victor-glover.png';
-
 import {
   PageBackground,
   Box,
@@ -23,7 +22,7 @@ import {
 const Victor = () => {
   const infos = [
     {
-      number: 02,
+      number: '02',
       callToAction: 'meet our crew',
       ocupation: 'pilot',
       pilotName: 'Victor Glover',

@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from '../Header';
+import { Bounce } from 'react-reveal';
+import ImageAnousheh from '../../images/crew/image-anousheh-ansari.png';
 import {
   PageBackground,
   Box,
@@ -21,7 +23,7 @@ import {
 const CrewStructure = () => {
   const infos = [
     {
-      number: 02,
+      number: '02',
       callToAction: 'meet our crew',
       ocupation: 'pilot',
       pilotName: 'Victor Glover',

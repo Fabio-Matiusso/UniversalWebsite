@@ -5,6 +5,7 @@ import {
   StyledNumberSpaceLaunch,
   StyledTextSpaceLaunch,
   LateralUlStyled,
+  Image,
   LateralLiStyled,
   LateralLiStyledActive,
   LinkStyled,
@@ -14,7 +15,7 @@ import {
   LaunchVehicleDescription,
   ImageTwo,
 } from './styledComponents';
-import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 import Header from '../Header';
 import RocketImage from '../../images/technology/image-space-capsule-portrait.jpg';
 import RocketImageTwo from '../../images/technology/image-space-capsule-landscape.jpg';
@@ -22,10 +23,10 @@ import RocketImageTwo from '../../images/technology/image-space-capsule-landscap
 const SpaceCapsule = () => {
   const infos = [
     {
-      number: 03,
+      number: '03',
       title: 'SPACE LAUNCH 101',
       paths: [
-        { path: '/launchVehicle', index: 1 },
+        { path: '/launchvehicle', index: 1 },
         { path: '/spaceport', index: 2 },
         { path: '/spacecapsule', index: 3 },
       ],
@@ -48,13 +49,13 @@ const SpaceCapsule = () => {
               <StyledTextSpaceLaunch>{title}</StyledTextSpaceLaunch>
             </SpaceLaunch>
 
-            {paths.map(({ path, index }) => (
-              <LateralUlStyled>
+            <LateralUlStyled>
+              {paths.map(({ path, index }) => (
                 <LinkStyled to={path}>
-                  <LateralLiStyledActive>{index}</LateralLiStyledActive>
+                  <LateralLiStyled>{index}</LateralLiStyled>
                 </LinkStyled>
-              </LateralUlStyled>
-            ))}
+              ))}
+            </LateralUlStyled>
 
             <ContainerContent>
               <Terminology>{terminology}</Terminology>

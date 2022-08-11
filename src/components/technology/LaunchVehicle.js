@@ -23,10 +23,10 @@ import RocketImageTwo from '../../images/technology/image-launch-vehicle-landsca
 const LaunchVehicleComponent = () => {
   const infos = [
     {
-      number: 03,
+      number: '03',
       title: 'SPACE LAUNCH 101',
       paths: [
-        { path: '/launchVehicle', index: 1 },
+        { path: '/launchvehicle', index: 1 },
         { path: '/spaceport', index: 2 },
         { path: '/spacecapsule', index: 3 },
       ],
@@ -49,13 +49,13 @@ const LaunchVehicleComponent = () => {
               <StyledTextSpaceLaunch>{title}</StyledTextSpaceLaunch>
             </SpaceLaunch>
 
-            {paths.map(({ path, index }) => (
-              <LateralUlStyled>
+            <LateralUlStyled>
+              {paths.map(({ path, index }) => (
                 <LinkStyled to={path}>
-                  <LateralLiStyledActive>{index}</LateralLiStyledActive>
+                  <LateralLiStyled>{index}</LateralLiStyled>
                 </LinkStyled>
-              </LateralUlStyled>
-            ))}
+              ))}
+            </LateralUlStyled>
 
             <ContainerContent>
               <Terminology>{terminology}</Terminology>

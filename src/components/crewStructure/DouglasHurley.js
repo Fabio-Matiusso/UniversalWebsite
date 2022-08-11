@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../Header';
 import Bounce from 'react-reveal/Bounce';
 import ImageDouglas from '../../images/crew/image-douglas-hurley.png';
-
 import {
   PageBackground,
   Box,
@@ -24,7 +23,7 @@ import {
 const DouglasHurley = () => {
   const infos = [
     {
-      number: 02,
+      number: '02',
       callToAction: 'meet our crew',
       ocupation: 'Commander',
       pilotName: 'douglas hurley',

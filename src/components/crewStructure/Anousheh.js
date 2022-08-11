@@ -23,7 +23,7 @@ import {
 const Anousheh = () => {
   const infos = [
     {
-      number: 02,
+      number: '02',
       callToAction: 'meet our crew',
       ocupation: 'Flight Engineer',
       pilotName: 'Anousheh Ansari',

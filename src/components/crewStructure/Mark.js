@@ -23,12 +23,18 @@ import {
 const Mark = () => {
   const infos = [
     {
-      number: 02,
+      number: '02',
       callToAction: 'meet our crew',
       ocupation: 'Mission Specialist ',
       pilotName: 'mark shuttleworth',
       description:
         'Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.',
+      paths: [
+        { path: '/douglas' },
+        { path: '/mark' },
+        { path: '/victor' },
+        { path: '/anousheh' },
+      ],
     },
   ];
 
