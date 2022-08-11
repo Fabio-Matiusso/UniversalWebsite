@@ -1,100 +1,94 @@
-import React, { useState } from "react";
-import styled from 'styled-components'
-import ImageMoon from '../../images/destination/image-moon.png'
-import Header from "../Header";
+import React, { useState } from 'react';
+import ImageMoon from '../../images/destination/image-moon.png';
+import Header from '../Header';
 import Slide from 'react-reveal/Slide';
-import { Link } from "react-router-dom";
-import { links } from "../../pages/Destination";
-import {BackgroundImagePlanetsComponent} from './StyledComponentsPlanets'
-import { ContainerImg } from "./StyledComponentsPlanets";
-import { Img } from "./StyledComponentsPlanets";
-import { Box } from "./StyledComponentsPlanets";
-import { Title } from "./StyledComponentsPlanets";
-import { TitlePlanet } from "./StyledComponentsPlanets";
-import { PlanetSubtitle } from "./StyledComponentsPlanets";
-import { PlanetAndDesc } from "./StyledComponentsPlanets";
-import { DescPlanet } from "./StyledComponentsPlanets";
-import { PlanetOption } from "./StyledComponentsPlanets";
-import { LiPlanetValue } from "./StyledComponentsPlanets";
-import { Distances } from "./StyledComponentsPlanets";
-import { DistanceTitle } from "./StyledComponentsPlanets";
-import { DistanceNumber } from "./StyledComponentsPlanets";
-
+import { links } from '../../pages/Destination';
+import {
+  BackgroundImagePlanetsComponent,
+  ContainerImg,
+  Img,
+  Box,
+  Title,
+  TitlePlanet,
+  PlanetSubtitle,
+  PlanetAndDesc,
+  DescPlanet,
+  PlanetOption,
+  LiPlanetValue,
+  Distances,
+  DistanceTitle,
+  DistanceNumber,
+} from './StyledComponentsPlanets';
 
 const Moon = () => {
+  const infos = [
+    {
+      title: '01 pick your destination',
+      planetOptions: ['MOON', 'MARS', 'EUROPA', 'TITAN'],
+      titlePlanet: 'MOON',
+      PlanetSubtitle:
+        'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.',
+      distanceTitle: 'AVG. DISTANCE',
+      km: '384,400 km',
+      travelTimeTitle: 'EST. TRAVEL TIME',
+      travelTime: '3 DAYS',
+    },
+  ];
 
+  return infos.map(
+    ({
+      title,
+      planetOptions,
+      titlePlanet,
+      PlanetSubtitle,
+      distanceTitle,
+      km,
+      travelTimeTitle,
+      travelTime,
+    }) => (
+      <BackgroundImagePlanetsComponent>
+        <Header links={links} />
+        <div style={{ maxWidth: '100%' }}>
+          <Slide left>
+            <Title>{title}</Title>
+            <Box>
+              <PlanetAndDesc>
+                <ContainerImg>
+                  <Img src={ImageMoon} />
+                </ContainerImg>
 
+                <DescPlanet>
+                  <PlanetOption>
+                    {planetOptions.map((planet) => (
+                      <>
+                        <LiPlanetValue to={`/${planet.toLowerCase()}`}>
+                          {planet}
+                        </LiPlanetValue>
+                      </>
+                    ))}
+                  </PlanetOption>
+                  <TitlePlanet>{titlePlanet}</TitlePlanet>
+                  <PlanetSubtitle>{PlanetSubtitle}</PlanetSubtitle>
+                  <hr />
+                  <Distances>
+                    <div>
+                      <DistanceTitle>{distanceTitle}</DistanceTitle>
+                      <DistanceNumber>{DistanceNumber}</DistanceNumber>
+                    </div>
 
-    const changeToMoon = () => {
-
-        console.log("Mudou para lua")
-
-    }
-
-    const changeToMars = () => {
-
-
-        console.log("Mudou para Mars")
-    }
-
-    const changeToEuropa = () => {
-
-
-        console.log("Mudou para Europa")
-    }
-
-    const changeToTitan = () => {
-
-
-        console.log("Mudou para Titan")
-    }
-    
-    return(
-        
-        <BackgroundImagePlanetsComponent>
-            <Header links={links}/>
-            <div style={{maxWidth: "100%"}}>
-            <Slide left>
-            <Title>01 pick your destination</Title>
-                <Box>
-                    <PlanetAndDesc>
-                        <ContainerImg>
-                                <Img  src = {ImageMoon}/>    
-                        </ContainerImg>
-
-                        <DescPlanet>
-                            <PlanetOption>
-
-                                <LiPlanetValue to = '/moon' onClick={() => {changeToMoon()}}>MOON</LiPlanetValue>
-                                <LiPlanetValue to = '/mars' onClick={() => {changeToMars()}}>MARS</LiPlanetValue>
-                                <LiPlanetValue to = '/europa' onClick={() => {changeToEuropa()}}>EUROPA</LiPlanetValue>
-                                <LiPlanetValue to = '/titan' onClick={() => {changeToTitan()}}>TITAN</LiPlanetValue>
-                            </PlanetOption>
-                            <TitlePlanet>moon</TitlePlanet>
-                            <PlanetSubtitle>
-                            See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
-                            </PlanetSubtitle>
-                            <hr />
-                            <Distances>
-                                <div>
-                                    <DistanceTitle>AVG DISTANCE</DistanceTitle>
-                                    <DistanceNumber>384,400 KM</DistanceNumber>
-                                </div>
-
-                                <div>
-                                    <DistanceTitle>EST. TRAVEL TIME</DistanceTitle>
-                                    <DistanceNumber>3 DAYS</DistanceNumber>
-                                </div>
-                            </Distances>
-                        </DescPlanet>
-
-                    </PlanetAndDesc>
-                </Box>
-                
-            </Slide>
+                    <div>
+                      <DistanceTitle>{travelTimeTitle}</DistanceTitle>
+                      <DistanceNumber>{travelTime}</DistanceNumber>
+                    </div>
+                  </Distances>
+                </DescPlanet>
+              </PlanetAndDesc>
+            </Box>
+          </Slide>
         </div>
-        </BackgroundImagePlanetsComponent>
-    )
-}
+      </BackgroundImagePlanetsComponent>
+    ),
+  );
+};
 
-export default Moon
+export default Moon;
