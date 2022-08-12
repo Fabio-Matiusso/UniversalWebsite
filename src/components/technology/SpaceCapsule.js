@@ -7,7 +7,6 @@ import {
   LateralUlStyled,
   Image,
   LateralLiStyled,
-  LateralLiStyledActive,
   LinkStyled,
   ContainerContent,
   Terminology,
@@ -19,8 +18,11 @@ import Zoom from 'react-reveal/Zoom';
 import Header from '../Header';
 import RocketImage from '../../images/technology/image-space-capsule-portrait.jpg';
 import RocketImageTwo from '../../images/technology/image-space-capsule-landscape.jpg';
+import { useState } from 'react';
 
 const SpaceCapsule = () => {
+  const [background, setBackground] = useState(true);
+
   const infos = [
     {
       number: '03',
@@ -42,7 +44,7 @@ const SpaceCapsule = () => {
       <BackgroundImagePage>
         <Header />
 
-        <Zoom left>
+        <Zoom left duration={700}>
           <ContainerGrid>
             <SpaceLaunch>
               <StyledNumberSpaceLaunch>{number}</StyledNumberSpaceLaunch>
@@ -52,7 +54,15 @@ const SpaceCapsule = () => {
             <LateralUlStyled>
               {paths.map(({ path, index }) => (
                 <LinkStyled to={path}>
-                  <LateralLiStyled>{index}</LateralLiStyled>
+                  <LateralLiStyled
+                    style={{
+                      background:
+                        index === 3 && background ? 'white' : 'transparent',
+                      color: index === 3 && background ? 'black' : 'white',
+                    }}
+                  >
+                    {index}
+                  </LateralLiStyled>
                 </LinkStyled>
               ))}
             </LateralUlStyled>

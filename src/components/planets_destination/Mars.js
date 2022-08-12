@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
 import ImageMars from '../../images/destination/image-mars.png';
 import Header from '../Header';
-import Slide from 'react-reveal/Slide';
 import { links } from '../../pages/Destination';
 import {
   BackgroundImagePlanetsComponent,
@@ -19,6 +17,7 @@ import {
   DistanceTitle,
   DistanceNumber,
 } from './StyledComponentsPlanets';
+import { Fade } from 'react-reveal';
 
 const Mars = () => {
   const infos = [
@@ -49,7 +48,7 @@ const Mars = () => {
       <BackgroundImagePlanetsComponent>
         <Header links={links} />
         <div style={{ maxWidth: '100%' }}>
-          <Slide left>
+          <Fade right duration={900}>
             <Title>{title}</Title>
             <Box>
               <PlanetAndDesc>
@@ -84,7 +83,7 @@ const Mars = () => {
                 </DescPlanet>
               </PlanetAndDesc>
             </Box>
-          </Slide>
+          </Fade>
         </div>
       </BackgroundImagePlanetsComponent>
     ),

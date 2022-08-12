@@ -7,7 +7,6 @@ import {
   LateralUlStyled,
   Image,
   LateralLiStyled,
-  LateralLiStyledActive,
   LinkStyled,
   ContainerContent,
   Terminology,
@@ -19,8 +18,11 @@ import Header from '../Header';
 import RocketImage from '../../images/technology/image-spaceport-portrait.jpg';
 import RocketImageTwo from '../../images/technology/image-spaceport-landscape.jpg';
 import Zoom from 'react-reveal/Fade';
+import { useState } from 'react';
 
 const Spaceport = () => {
+  const [background, setBackground] = useState(true);
+
   const infos = [
     {
       number: '03',
@@ -42,7 +44,7 @@ const Spaceport = () => {
       <BackgroundImagePage>
         <Header />
 
-        <Zoom left>
+        <Zoom left duration={600}>
           <ContainerGrid>
             <SpaceLaunch>
               <StyledNumberSpaceLaunch>{number}</StyledNumberSpaceLaunch>
@@ -52,7 +54,15 @@ const Spaceport = () => {
             <LateralUlStyled>
               {paths.map(({ path, index }) => (
                 <LinkStyled to={path}>
-                  <LateralLiStyled>{index}</LateralLiStyled>
+                  <LateralLiStyled
+                    style={{
+                      background:
+                        index === 2 && background ? 'white' : 'transparent',
+                      color: index === 2 && background ? 'black' : 'white',
+                    }}
+                  >
+                    {index}
+                  </LateralLiStyled>
                 </LinkStyled>
               ))}
             </LateralUlStyled>

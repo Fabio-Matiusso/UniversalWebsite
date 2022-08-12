@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import ImageEuropa from '../../images/destination/image-europa.png';
 import Header from '../Header';
-import Slide from 'react-reveal/Slide';
 import { links } from '../../pages/Destination';
+import { Fade } from 'react-reveal';
 import {
   BackgroundImagePlanetsComponent,
   ContainerImg,
@@ -49,7 +48,7 @@ const Europa = () => {
       <BackgroundImagePlanetsComponent>
         <Header links={links} />
         <div style={{ maxWidth: '100%' }}>
-          <Slide left>
+          <Fade right duration={900}>
             <Title>{title}</Title>
             <Box>
               <PlanetAndDesc>
@@ -84,7 +83,7 @@ const Europa = () => {
                 </DescPlanet>
               </PlanetAndDesc>
             </Box>
-          </Slide>
+          </Fade>
         </div>
       </BackgroundImagePlanetsComponent>
     ),

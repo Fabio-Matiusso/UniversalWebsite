@@ -7,7 +7,6 @@ import {
   StyledTextSpaceLaunch,
   LateralUlStyled,
   LateralLiStyled,
-  LateralLiStyledActive,
   LinkStyled,
   ContainerContent,
   Terminology,
@@ -19,8 +18,11 @@ import Zoom from 'react-reveal/Zoom';
 import Header from '../Header';
 import RocketImage from '../../images/technology/image-launch-vehicle-portrait.jpg';
 import RocketImageTwo from '../../images/technology/image-launch-vehicle-landscape.jpg';
+import { useState } from 'react';
 
 const LaunchVehicleComponent = () => {
+  const [background, setBackground] = useState(true);
+
   const infos = [
     {
       number: '03',
@@ -42,7 +44,7 @@ const LaunchVehicleComponent = () => {
       <BackgroundImagePage>
         <Header />
 
-        <Zoom left>
+        <Zoom left duration={700}>
           <ContainerGrid>
             <SpaceLaunch>
               <StyledNumberSpaceLaunch>{number}</StyledNumberSpaceLaunch>
@@ -52,7 +54,15 @@ const LaunchVehicleComponent = () => {
             <LateralUlStyled>
               {paths.map(({ path, index }) => (
                 <LinkStyled to={path}>
-                  <LateralLiStyled>{index}</LateralLiStyled>
+                  <LateralLiStyled
+                    style={{
+                      background:
+                        index === 1 && background ? 'white' : 'transparent',
+                      color: index === 1 && background ? 'black' : 'white',
+                    }}
+                  >
+                    {index}
+                  </LateralLiStyled>
                 </LinkStyled>
               ))}
             </LateralUlStyled>

@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
 import ImageTitan from '../../images/destination/image-titan.png';
-import BackgroundImagePlanets from '../../images/destination/background-destination-desktop.jpg';
 import Header from '../Header';
-import Slide from 'react-reveal/Slide';
 import { links } from '../../pages/Destination';
 import {
   BackgroundImagePlanetsComponent,
@@ -21,6 +17,7 @@ import {
   DistanceTitle,
   DistanceNumber,
 } from './StyledComponentsPlanets';
+import { Fade } from 'react-reveal';
 
 const Titan = () => {
   const infos = [
@@ -51,7 +48,7 @@ const Titan = () => {
       <BackgroundImagePlanetsComponent>
         <Header links={links} />
         <div style={{ maxWidth: '100%' }}>
-          <Slide left>
+          <Fade right duration={900}>
             <Title>{title}</Title>
             <Box>
               <PlanetAndDesc>
@@ -86,7 +83,7 @@ const Titan = () => {
                 </DescPlanet>
               </PlanetAndDesc>
             </Box>
-          </Slide>
+          </Fade>
         </div>
       </BackgroundImagePlanetsComponent>
     ),

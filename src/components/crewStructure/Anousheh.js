@@ -16,7 +16,6 @@ import {
   PilotImage,
   Img,
   Slider,
-  CircleSlideActive,
   CircleSlide,
 } from './StyledComponentsCrew';
 import { useState } from 'react';

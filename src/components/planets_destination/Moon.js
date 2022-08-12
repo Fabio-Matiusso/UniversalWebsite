@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
 import ImageMoon from '../../images/destination/image-moon.png';
 import Header from '../Header';
-import Slide from 'react-reveal/Slide';
 import { links } from '../../pages/Destination';
 import {
   BackgroundImagePlanetsComponent,
@@ -19,6 +17,7 @@ import {
   DistanceTitle,
   DistanceNumber,
 } from './StyledComponentsPlanets';
+import { Fade } from 'react-reveal';
 
 const Moon = () => {
   const infos = [
@@ -49,7 +48,7 @@ const Moon = () => {
       <BackgroundImagePlanetsComponent>
         <Header links={links} />
         <div style={{ maxWidth: '100%' }}>
-          <Slide left>
+          <Fade right duration={900}>
             <Title>{title}</Title>
             <Box>
               <PlanetAndDesc>
@@ -84,7 +83,7 @@ const Moon = () => {
                 </DescPlanet>
               </PlanetAndDesc>
             </Box>
-          </Slide>
+          </Fade>
         </div>
       </BackgroundImagePlanetsComponent>
     ),
