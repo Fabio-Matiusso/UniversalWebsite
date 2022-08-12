@@ -1,7 +1,6 @@
-import React from 'react';
 import Header from '../Header';
-import Bounce from 'react-reveal/Bounce';
 import ImageDouglas from '../../images/crew/image-douglas-hurley.png';
+import { Fade } from 'react-reveal';
 import {
   PageBackground,
   Box,
@@ -19,8 +18,15 @@ import {
   CircleSlideActive,
   CircleSlide,
 } from './StyledComponentsCrew';
+import { useState } from 'react';
 
 const DouglasHurley = () => {
+  const [slideActive, setSlideActive] = useState(true);
+
+  const handleClick = () => {
+    setSlideActive(!slideActive);
+  };
+
   const infos = [
     {
       number: '02',
@@ -44,7 +50,7 @@ const DouglasHurley = () => {
         <PageBackground>
           <Header />
 
-          <Bounce left>
+          <Fade left duration={500}>
             <Box>
               <TitlePage>
                 <SpanStyled>{number}</SpanStyled>{' '}
@@ -63,12 +69,18 @@ const DouglasHurley = () => {
               </PilotImage>
 
               <Slider>
-                {paths.map(({ path }) => (
-                  <CircleSlide to={path} />
+                {paths.map(({ path }, index) => (
+                  <CircleSlide
+                    to={path}
+                    onClick={handleClick}
+                    style={{
+                      opacity: index === 0 && slideActive ? '1' : '0.5',
+                    }}
+                  />
                 ))}
               </Slider>
             </Box>
-          </Bounce>
+          </Fade>
         </PageBackground>
       </>
     ),

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Header';
-import Bounce from 'react-reveal/Bounce';
+import { Fade } from 'react-reveal';
 import ImageAnousheh from '../../images/crew/image-anousheh-ansari.png';
 import {
   PageBackground,
@@ -19,8 +19,11 @@ import {
   CircleSlideActive,
   CircleSlide,
 } from './StyledComponentsCrew';
+import { useState } from 'react';
 
 const Anousheh = () => {
+  const [slideActive, setSlideActive] = useState(true);
+
   const infos = [
     {
       number: '02',
@@ -44,7 +47,7 @@ const Anousheh = () => {
         <PageBackground>
           <Header />
 
-          <Bounce left>
+          <Fade bottom duration={500}>
             <Box>
               <TitlePage>
                 <SpanStyled>{number}</SpanStyled>{' '}
@@ -63,12 +66,17 @@ const Anousheh = () => {
               </PilotImage>
 
               <Slider>
-                {paths.map(({ path }) => (
-                  <CircleSlide to={path} />
+                {paths.map(({ path }, index) => (
+                  <CircleSlide
+                    to={path}
+                    style={{
+                      opacity: index === 3 && slideActive ? '1' : '0.5',
+                    }}
+                  />
                 ))}
               </Slider>
             </Box>
-          </Bounce>
+          </Fade>
         </PageBackground>
       </>
     ),

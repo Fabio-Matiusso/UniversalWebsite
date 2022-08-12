@@ -1,6 +1,6 @@
 import Header from '../Header';
-import Bounce from 'react-reveal/Bounce';
 import ImageMark from '../../images/crew/image-mark-shuttleworth.png';
+import { Fade } from 'react-reveal';
 
 import {
   PageBackground,
@@ -19,8 +19,11 @@ import {
   CircleSlideActive,
   CircleSlide,
 } from './StyledComponentsCrew';
+import { useState } from 'react';
 
 const Mark = () => {
+  const [slideActive, setSlideActive] = useState(true);
+
   const infos = [
     {
       number: '02',
@@ -44,7 +47,7 @@ const Mark = () => {
         <PageBackground>
           <Header />
 
-          <Bounce left>
+          <Fade bottom duration={500}>
             <Box>
               <TitlePage>
                 <SpanStyled>{number}</SpanStyled>{' '}
@@ -63,12 +66,17 @@ const Mark = () => {
               </PilotImage>
 
               <Slider>
-                {paths.map(({ path }) => (
-                  <CircleSlide to={path} />
+                {paths.map(({ path }, index) => (
+                  <CircleSlide
+                    to={path}
+                    style={{
+                      opacity: index === 1 && slideActive ? '1' : '0.5',
+                    }}
+                  />
                 ))}
               </Slider>
             </Box>
-          </Bounce>
+          </Fade>
         </PageBackground>
       </>
     ),

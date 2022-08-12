@@ -1,5 +1,4 @@
 import Header from '../Header';
-import Bounce from 'react-reveal/Bounce';
 import ImageVictor from '../../images/crew/image-victor-glover.png';
 import {
   PageBackground,
@@ -18,8 +17,12 @@ import {
   CircleSlideActive,
   CircleSlide,
 } from './StyledComponentsCrew';
+import { useState } from 'react';
+import { Fade } from 'react-reveal';
 
 const Victor = () => {
+  const [slideActive, setSlideActive] = useState(true);
+
   const infos = [
     {
       number: '02',
@@ -43,7 +46,7 @@ const Victor = () => {
         <PageBackground>
           <Header />
 
-          <Bounce left>
+          <Fade bottom duration={500}>
             <Box>
               <TitlePage>
                 <SpanStyled>{number}</SpanStyled>{' '}
@@ -62,12 +65,17 @@ const Victor = () => {
               </PilotImage>
 
               <Slider>
-                {paths.map(({ path }) => (
-                  <CircleSlide to={path} />
+                {paths.map(({ path }, index) => (
+                  <CircleSlide
+                    to={path}
+                    style={{
+                      opacity: index === 2 && slideActive ? '1' : '0.5',
+                    }}
+                  />
                 ))}
               </Slider>
             </Box>
-          </Bounce>
+          </Fade>
         </PageBackground>
       </>
     ),
