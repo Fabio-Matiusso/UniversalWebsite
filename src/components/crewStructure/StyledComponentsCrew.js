@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export const Box = styled.div`
   width: 80%;
-  height: 500px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -43,7 +42,6 @@ export const PageBackground = styled.body`
 `;
 
 export const TitlePage = styled.div`
-  height: 34px;
   font-size: 28px;
   width: 400px;
 
@@ -125,7 +123,6 @@ export const CrewContent = styled.div`
   max-width: 100%;
   display: grid;
   grid-column: 1;
-  height: 500px;
   grid-row: 2;
 
   @media (max-width: 930px) {
@@ -189,7 +186,6 @@ export const PilotImage = styled.div`
   @media (max-width: 560px) {
     padding: 20px;
     width: 250px;
-    height: 300px;
     justify-self: center;
   }
 `;
@@ -329,14 +325,12 @@ export const CircleSlide = styled(Link)`
 
 export const Img = styled.img`
   width: 400px;
-  height: 400px;
   display: flex;
   align-items: center;
   margin-top: 10px;
 
   @media (max-width: 930px) {
     width: 200px;
-    height: 300px;
     display: block;
     margin-left: auto;
     margin-right: auto;
