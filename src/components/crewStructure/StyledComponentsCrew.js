@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import BackgroundImage from '../../images/crew/background-crew-desktop.jpg';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import BackgroundImage from "../../images/crew/background-crew-desktop.jpg";
+import { Link } from "react-router-dom";
 
 export const Box = styled.div`
   width: 80%;
@@ -279,8 +279,7 @@ export const Description = styled.p`
 `;
 
 export const Slider = styled.div`
-  width: 132px;
-  height: 15px;
+  max-width: 150px;
   grid-column: 1;
   display: flex;
   justify-content: space-around;
@@ -290,6 +289,7 @@ export const Slider = styled.div`
   grid-template-columns: repeat(4, 1fr);
 
   @media (max-width: 930px) {
+    gap: 20px;
     grid-column: 1 / -1;
     max-width: 520px;
     align-self: flex-end;
@@ -302,7 +302,6 @@ export const Slider = styled.div`
     grid-column: 1 /-1;
     width: 200px;
     align-self: flex-start;
-    /* justify-self: center; */
     text-align: center;
     align-self: flex-end;
     justify-content: space-between;
