@@ -1,6 +1,6 @@
-import Header from '../Header';
-import ImageDouglas from '../../images/crew/image-douglas-hurley.png';
-import { Fade } from 'react-reveal';
+import Header from "../Header";
+import ImageDouglas from "../../images/crew/image-douglas-hurley.png";
+import { Fade } from "react-reveal";
 import {
   PageBackground,
   Box,
@@ -16,8 +16,9 @@ import {
   Img,
   Slider,
   CircleSlide,
-} from './StyledComponentsCrew';
-import { useState } from 'react';
+  ImageAndSlider,
+} from "./StyledComponentsCrew";
+import { useState } from "react";
 
 const DouglasHurley = () => {
   const [slideActive, setSlideActive] = useState(true);
@@ -28,17 +29,17 @@ const DouglasHurley = () => {
 
   const infos = [
     {
-      number: '02',
-      callToAction: 'meet our crew',
-      ocupation: 'Commander',
-      pilotName: 'douglas hurley',
+      number: "02",
+      callToAction: "meet our crew",
+      ocupation: "Commander",
+      pilotName: "douglas hurley",
       description:
-        'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
+        "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
       paths: [
-        { path: '/douglas' },
-        { path: '/mark' },
-        { path: '/victor' },
-        { path: '/anousheh' },
+        { path: "/douglas" },
+        { path: "/mark" },
+        { path: "/victor" },
+        { path: "/anousheh" },
       ],
     },
   ];
@@ -52,7 +53,7 @@ const DouglasHurley = () => {
           <Fade left duration={500}>
             <Box>
               <TitlePage>
-                <SpanStyled>{number}</SpanStyled>{' '}
+                <SpanStyled>{number}</SpanStyled>{" "}
                 <MeetOurCrew>{callToAction}</MeetOurCrew>
               </TitlePage>
 
@@ -73,7 +74,7 @@ const DouglasHurley = () => {
                     to={path}
                     onClick={handleClick}
                     style={{
-                      opacity: index === 0 && slideActive ? '1' : '0.5',
+                      opacity: index === 0 && slideActive ? "1" : "0.5",
                     }}
                   />
                 ))}
@@ -82,7 +83,7 @@ const DouglasHurley = () => {
           </Fade>
         </PageBackground>
       </>
-    ),
+    )
   );
 };
 

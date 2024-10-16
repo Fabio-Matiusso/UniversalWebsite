@@ -22,9 +22,9 @@ export const Box = styled.div`
   }
 `;
 
-export const PageBackground = styled.body`
-  width: 99vw;
-  height: 130vh;
+export const PageBackground = styled.div`
+  width: 100vw;
+  height: 100vh;
   background-image: url(${BackgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -272,7 +272,6 @@ export const Slider = styled.div`
   align-self: end;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background-color: red;
 
   @media (max-width: 930px) {
     gap: 20px;
