@@ -7,26 +7,15 @@ export const Box = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 400px;
 
   @media (max-width: 930px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 280px 326px;
     width: 60%;
     justify-content: center;
   }
 
-  @media (max-width: 820px) {
-    grid-template-rows: 100px 300px 326px;
-  }
-
-  @media (max-width: 680px) {
-    grid-template-rows: 100px 340px 326px;
-  }
-
   @media (max-width: 560px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 300px 400px;
     margin: 0 auto;
     width: 40%;
     justify-self: center;
@@ -277,18 +266,19 @@ export const Description = styled.p`
 export const Slider = styled.div`
   max-width: 150px;
   grid-column: 1;
-  display: flex;
+  display: grid;
   justify-content: space-around;
   grid-row: 2;
   align-self: end;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background-color: red;
 
   @media (max-width: 930px) {
     gap: 20px;
+    grid-row: 3;
     grid-column: 1 / -1;
     max-width: 520px;
-    align-self: flex-end;
     justify-self: center;
     text-align: center;
   }
@@ -300,14 +290,8 @@ export const Slider = styled.div`
     align-self: flex-start;
     text-align: center;
     align-self: flex-end;
-    justify-content: space-between;
-    margin-left: 70px;
-  }
-
-  @media (max-width: 820px) {
-  }
-
-  @media (max-width: 680px) {
+    justify-content: center;
+    margin: 0 auto;
   }
 `;
 
