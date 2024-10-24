@@ -287,7 +287,6 @@ export const Slider = styled.div`
   }
 
   @media (max-width: 560px) {
-    padding: 0px 45px 0px 0px;
     grid-column: 1 /-1;
     width: 200px;
     align-self: flex-start;
