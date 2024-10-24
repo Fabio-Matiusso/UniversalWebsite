@@ -290,8 +290,7 @@ export const Slider = styled.div`
     grid-column: 1 /-1;
     width: 200px;
     align-self: flex-start;
-    text-align: center;
-    justify-content: center;
+    justify-items: center;
     margin: 0 auto;
   }
 `;
