@@ -1,12 +1,13 @@
-import styled from "styled-components";
-import BackgroundImage from "../../images/crew/background-crew-desktop.jpg";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import BackgroundImage from '../../images/crew/background-crew-desktop.jpg';
+import { Link } from 'react-router-dom';
 
 export const Box = styled.div`
   width: 80%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
 
   @media (max-width: 930px) {
     grid-template-columns: 1fr;
@@ -166,10 +167,12 @@ export const PilotImage = styled.div`
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 80px;
 
   @media (max-width: 930px) {
     grid-row: 3;
     grid-column: 1 / -1;
+    align-self: end;
   }
 
   @media (max-width: 560px) {
@@ -280,6 +283,7 @@ export const Slider = styled.div`
     max-width: 520px;
     justify-self: center;
     text-align: center;
+    align-self: start;
   }
 
   @media (max-width: 560px) {
@@ -288,7 +292,6 @@ export const Slider = styled.div`
     width: 200px;
     align-self: flex-start;
     text-align: center;
-    align-self: flex-end;
     justify-content: center;
     margin: 0 auto;
   }
